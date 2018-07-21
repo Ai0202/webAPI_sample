@@ -12,12 +12,13 @@
     $stmt = $dbh->prepare($sql);
     $stmt->execute();
 
+    $record = [];
     while (true) {
         if ($record === false) break;
 
         $record[] = $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    echo json_encode($record ?? []);
+    echo json_encode($record);
 
 // curl -X GET "https://web-api-sample.herokuapp.com/";
