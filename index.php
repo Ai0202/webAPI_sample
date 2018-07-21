@@ -13,14 +13,15 @@
     $stmt->execute();
 
     $record = [];
+
     while (true) {
-        if ($record === false) {
+        $res = $stmt->fetch(PDO::FETCH_ASSOC);
+       
+        if ($res === false) {
             break;
         }
 
-        $record[] = $stmt->fetch(PDO::FETCH_ASSOC);
+        $record[] = $res;
     }
 
     echo json_encode($record);
-
-// curl -X GET "https://web-api-sample.herokuapp.com/";
