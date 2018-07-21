@@ -11,10 +11,13 @@
     $sql = 'SELECT * FROM `test`';
     $stmt = $dbh->prepare($sql);
     $stmt->execute();
-    $record = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    echo json_encode($record);
+    while (true) {
+        if ($record === false) break;
 
+        $record[] = $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 
-// curl -X GET "127.0.0.1:8888/index.php?date=2018%2F07%2F17";
-// curl -X GET "https://web-api-sample.herokuapp.com/?date=2018%2F07%2F17";
+    echo json_encode($record ?? []);
+
+// curl -X GET "https://web-api-sample.herokuapp.com/";
