@@ -14,7 +14,9 @@
 
     $record = [];
     while (true) {
-        if ($record === false) break;
+        if ($record === false) {
+            break;
+        }
 
         $record[] = $stmt->fetch(PDO::FETCH_ASSOC);
     }
