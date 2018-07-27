@@ -1,5 +1,5 @@
 <?php
-    $id = $_GET['id'];
+    // $id = $_GET['id'];
     $name = $_GET['name'];
     $message = $_GET["message"]
 
@@ -11,9 +11,9 @@
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $dbh->query('SET NAMES utf8');
 
-    $sql = 'INSERT INTO `apiyou`(`name`, `animal`, 'message') VALUES (?, ?, ?)';
+    $sql = 'INSERT INTO `Mike`(`name`, 'message') VALUES (?, ?)';
 
-    $data = [$name,$animal];
+    $data = [$name,$message];
     $stmt = $dbh->prepare($sql);
     $stmt->execute($data);  // SQLインジェクション対策で作った
 
