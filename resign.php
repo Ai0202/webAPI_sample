@@ -1,5 +1,5 @@
 <?php
-    $name = $_GET['nickname'];
+    $name = $_GET['name'];
     $animal = $_GET['animal'];
 
     $dsn = 'mysql:dbname='. getenv('DB_NAME') .';host=' . getenv('HOST_NAME');
@@ -12,11 +12,12 @@
 
     $sql = 'INSERT INTO `apiyou`(`name`, `animal`) VALUES (?, ?)';
  
-    $data = [$name,$animal,$content];
+    $data = [$name,$animal];
     $stmt = $dbh->prepare($sql);
     $stmt->execute($data);  // SQLインジェクション対策で作った
 
     // ３．データベースを切断する
     $dbh = null;
 
+    echo json_encode(true);
 
