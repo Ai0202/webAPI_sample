@@ -11,7 +11,7 @@
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $dbh->query('SET NAMES utf8');
 
-    $sql = 'INSERT INTO `mike`(`name`, 'message') VALUES (?, ?)';
+    $sql = 'INSERT INTO `mike`(`name`, `message`) VALUES (?, ?)';
 
     $data = [$name,$message];
     $stmt = $dbh->prepare($sql);
