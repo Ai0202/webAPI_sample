@@ -1,6 +1,6 @@
 <?php
-    $name = $_GET['name'];
-    $animal = $_GET['animal'];
+    $name = $_GET['restaurant'];
+    $animal = $_GET['food'];
 
     $dsn = 'mysql:dbname='. getenv('DB_NAME') .';host=' . getenv('HOST_NAME');
     $user = getenv('SQL_USER');
@@ -10,7 +10,7 @@
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $dbh->query('SET NAMES utf8');
 
-    $sql = 'INSERT INTO `apiyou`(`name`, `animal`) VALUES (?, ?)';
+    $sql = 'INSERT INTO `terus`(`restaurant`, `food`) VALUES (?, ?)';
  
     $data = [$name,$animal];
     $stmt = $dbh->prepare($sql);
