@@ -1,5 +1,5 @@
 <?php
-  require('dbconnect.php');
+  require('connect.php');
   $sql = 'SELECT * FROM `re`';
   $stmt = $dbh->prepare($sql);
   $stmt->execute();
