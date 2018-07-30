@@ -8,7 +8,7 @@
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $dbh->query('SET NAMES utf8');
 
-    $sql = 'SELECT * FROM `apiyou`';
+    $sql = 'SELECT * FROM `terus`';
     $stmt = $dbh->prepare($sql);
     $stmt->execute();
 
