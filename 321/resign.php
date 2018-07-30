@@ -1,6 +1,6 @@
 <?php
-    $name = $_GET['name'];
-    $animal = $_GET['animal'];
+    $meal = $_GET['meal'];
+    $place = $_GET['place'];
 
     $dsn = 'mysql:dbname='. getenv('DB_NAME') .';host=' . getenv('HOST_NAME');
     $user = getenv('SQL_USER');
@@ -12,7 +12,7 @@
 
     $sql = 'INSERT INTO `321`(`meal`, `place`) VALUES (?, ?)';
  
-    $data = [$name,$animal];
+    $data = [$meal,$place];
     $stmt = $dbh->prepare($sql);
     $stmt->execute($data);  // SQLインジェクション対策で作った
 
