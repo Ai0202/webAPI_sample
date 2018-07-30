@@ -10,7 +10,7 @@
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $dbh->query('SET NAMES utf8');
 
-    $sql = 'INSERT INTO `re`(`name`, `profile`, `created_at`, `updated_at`) VALUES (?, ?, ?, ?)';
+    $sql = 'INSERT INTO `re`(`name`, `food`) VALUES (?, ?)';
 
     $data = [$name,$profile,Date(), Date()];
     $stmt = $dbh->prepare($sql);
